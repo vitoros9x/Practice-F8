@@ -292,5 +292,50 @@
 
     &__control {
         margin-top: 80px;
+        display: flex;
+        justify-content:flex-end;
+
+        &-back {
+            margin-right: 8px;
+        }
+    }
+
+    .btn.btn-normal:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        background-color: rgb(226, 226, 226);
+        padding: 14px 35px;
+        
+
+        .btn--icon {
+            flex: 1;
+
+            a {
+                font-size: 1.4rem;
+            }
+        }
+
+        .btn--icon-facebook {
+            background-color: #4267b2;
+            margin-right: 8px;
+
+            .btn-fb {
+                color: white;
+            }
+
+            .icon-facebook {
+                color: white;
+                font-size: 1.8rem;
+            }
+        }
+
+        .btn--icon-google {
+            background-color: white;
+        }
     }
 }

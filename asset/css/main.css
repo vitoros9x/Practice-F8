@@ -333,5 +333,59 @@
 
 .auth-form__control {
   margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.auth-form__control-back {
+  margin-right: 8px;
+}
+
+.auth-form .btn.btn-normal:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.auth-form__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 24px;
+  background-color: #e2e2e2;
+  padding: 14px 35px;
+}
+
+.auth-form__social .btn--icon {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.auth-form__social .btn--icon a {
+  font-size: 1.4rem;
+}
+
+.auth-form__social .btn--icon-facebook {
+  background-color: #4267b2;
+  margin-right: 8px;
+}
+
+.auth-form__social .btn--icon-facebook .btn-fb {
+  color: white;
+}
+
+.auth-form__social .btn--icon-facebook .icon-facebook {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.auth-form__social .btn--icon-google {
+  background-color: white;
 }
 /*# sourceMappingURL=main.css.map */
