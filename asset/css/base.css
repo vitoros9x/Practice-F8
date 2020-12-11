@@ -53,6 +53,28 @@ html {
   }
 }
 
+@-webkit-keyframes growth {
+  from {
+    -webkit-transform: scale(var(--growth-from));
+            transform: scale(var(--growth-from));
+  }
+  to {
+    -webkit-transform: scale(var(--growth-to));
+            transform: scale(var(--growth-to));
+  }
+}
+
+@keyframes growth {
+  from {
+    -webkit-transform: scale(var(--growth-from));
+            transform: scale(var(--growth-from));
+  }
+  to {
+    -webkit-transform: scale(var(--growth-to));
+            transform: scale(var(--growth-to));
+  }
+}
+
 /* Modal */
 .modal {
   position: fixed;
@@ -63,6 +85,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: fadeIn linear .15s;
+          animation: fadeIn linear .15s;
 }
 
 .modal__overlay {
@@ -77,6 +101,8 @@ html {
   z-index: 1;
   margin: auto;
   position: relative;
+  -webkit-animation: growth linear 0.15s;
+          animation: growth linear 0.15s;
 }
 
 .btn {
