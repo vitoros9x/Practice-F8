@@ -2,6 +2,7 @@
   --text-color: #333;
   --primary-color: rgb(238, 77, 45);
   --primary-color-notify: rgba(238, 77, 45, 0.08);
+  --star-gold:  #fece3e;
   --height-header: 120px;
   --height-topbar: 40px;
   --height-header-main: calc(var(--height-header) - var(--height-topbar)) ;
