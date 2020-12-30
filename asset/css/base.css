@@ -2,10 +2,10 @@
   --text-color: #333;
   --primary-color: rgb(238, 77, 45);
   --primary-color-notify: rgba(238, 77, 45, 0.08);
-  --star-gold:  #fece3e;
+  --star-gold: #fece3e;
   --height-header: 120px;
   --height-topbar: 40px;
-  --height-header-main: calc(var(--height-header) - var(--height-topbar)) ;
+  --height-header-main: calc(var(--height-header) - var(--height-topbar));
 }
 
 * {
@@ -19,6 +19,10 @@ html {
   font-family: "Roboto", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 .grid {
@@ -54,6 +58,12 @@ html {
 }
 
 .product-col {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+
+.col-2-4 {
   padding-left: 5px;
   padding-right: 5px;
   width: 20%;
@@ -151,5 +161,47 @@ html {
   cursor: default;
   background-color: #c3c3c3;
   color: #949494;
+}
+
+.pigination {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pigination__product {
+  margin: 48px 0 32px;
+}
+
+.pigination-item {
+  margin: 0 15px;
+}
+
+.pigination-item a {
+  color: #939393;
+  font-size: 2rem;
+  font-weight: 300;
+  min-width: 40px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.pigination-item--active a {
+  color: #fff;
+  background: var(--primary-color);
+}
+
+.pigination-item--active a:hover {
+  background: #ee4d2dd9;
 }
 /*# sourceMappingURL=base.css.map */

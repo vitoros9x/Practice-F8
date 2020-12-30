@@ -1,129 +1,185 @@
 :root {
-    --text-color: #333;
-    --primary-color: rgb(238, 77, 45);
-    --primary-color-notify: rgba(238, 77, 45, 0.08);
-    --star-gold:  #fece3e;
+  --text-color: #333;
+  --primary-color: rgb(238, 77, 45);
+  --primary-color-notify: rgba(238, 77, 45, 0.08);
+  --star-gold: #fece3e;
 
-    --height-header: 120px;
-    --height-topbar: 40px;
-    --height-header-main: calc(var(--height-header) - var(--height-topbar)) ;
+  --height-header: 120px;
+  --height-topbar: 40px;
+  --height-header-main: calc(var(--height-header) - var(--height-topbar));
+}
+
+@mixin limitedRow {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.grid__full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+// test
+.col-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 16.6667%;
+}
+
+.col-10 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 83.3333%;
+}
+
+.product-col {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+
+.col-2-4 {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  * {
-    box-sizing: inherit;
+  to {
+    opacity: 1;
   }
-  
-  html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
+}
+
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
   }
-  
-  .grid {
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
+  to {
+    transform: scale(var(--growth-to));
   }
-  
-  .grid__full-width {
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  animation: fadeIn linear 0.15s;
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
     width: 100%;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -5px;
-    margin-right: -5px;
+    height: 100%;
   }
 
-  // test
-  .col-2 {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 16.6667%;
+  &__body {
+    width: 500px;
+    z-index: 1;
+    margin: auto;
+    position: relative;
+    animation: growth linear 0.15s;
+  }
+}
+
+// Button style
+
+.btn {
+  min-width: 124px;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.btn.btn--primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn.btn--disable {
+  cursor: default;
+  background-color: #c3c3c3;
+  color: #949494;
+}
+
+// ========= Pigination ==============
+
+.pigination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pigination__product {
+  margin: 48px 0 32px;
+}
+
+.pigination-item {
+  margin: 0 15px;
+
+  a {
+    color: #939393;
+    font-size: 2rem;
+    font-weight: 300;
+    min-width: 40px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+  }
+}
+
+.pigination-item--active {
+  a {
+    color: #fff;
+    background: var(--primary-color);
   }
 
-  .col-10 {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 83.3333%;
+  a:hover {
+    background: #ee4d2dd9;
   }
-
-  .product-col {
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 20%;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes growth {
-    from {
-      transform: scale(var(--growth-from));
-    }
-    to {
-      transform: scale(var(--growth-to));
-    }
-  }
-  
-  /* Modal */
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    animation: fadeIn linear 0.15s;
-  
-    &__overlay {
-      background-color: rgba(0, 0, 0, 0.4);
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-  
-    &__body {
-      width: 500px;
-      z-index: 1;
-      margin: auto;
-      position: relative;
-      animation: growth linear 0.15s;
-    }
-  }
-  
-  // Button style
-  
-  .btn {
-    min-width: 124px;
-    height: 34px;
-    text-decoration: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 1.5rem;
-    padding: 0;
-    outline: none;
-    cursor: pointer;
-    background: #ffffff;
-  }
-  
-  .btn.btn--primary {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  
-  .btn.btn--disable {
-    cursor: default;
-    background-color: #c3c3c3;
-    color: #949494;
-  }
-  
+}
